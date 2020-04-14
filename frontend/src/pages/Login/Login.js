@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './Login.css';
 
-import api from '../services/api';
+import api from '../../services/api';
 
-import logo from '../assets/logo.svg';
+import logo from '../../assets/logo.svg';
 
 export default function Login({ history }) {
   const [username, setUsername] = useState('');

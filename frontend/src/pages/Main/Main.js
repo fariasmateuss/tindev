@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import './Main.css';
 
-import api from '../services/api';
+import api from '../../services/api';
 
-import logo from '../assets/logo.svg';
-import like from '../assets/like.svg';
-import dislike from '../assets/dislike.svg';
+import logo from '../../assets/logo.svg';
+import like from '../../assets/like.svg';
+import dislike from '../../assets/dislike.svg';
 
 export default function Main({ match }) {
   const [users, setUsers] = useState([]);
