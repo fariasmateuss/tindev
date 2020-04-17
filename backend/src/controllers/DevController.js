@@ -2,7 +2,7 @@ const axios = require('axios');
 const Dev = require('../models/Dev');
 
 module.exports = {
-  async index( req, res) {
+  async index(req, res) {
     const { user } = req.headers;
 
     const loggedDev = await Dev.findById(user);
@@ -17,20 +17,20 @@ module.exports = {
 
     return res.json(users);
   },
-
+  
   async store(req, res) {
-    const { username } = req.body;
+    const { username } = req.body; 
 
-    const useExister = await Dev.findOne({ user: username });
+    const userExists = await Dev.findOne({ user: username });
 
-    if (useExister) {
-      return res.json(useExister);
+    if (userExists) {
+      return res.json(userExists);
     }
 
     const response = await axios.get(`https://api.github.com/users/${username}`);
 
-    const { name, bio, avatar_url: avatar } = response.data;
-
+    const { name, bio, avatar_url: avatar } = response.data
+    
     const dev = await Dev.create({
       name,
       user: username,

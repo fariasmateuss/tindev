@@ -1,10 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import AsyncStorage from '@react-native-community/async-storage'
-import { KeyboardAvoidingView, Platform, Text, StyleSheet, Image, TextInput, TouchableOpacity } from 'react-native';
+import React, { useState, useEffect } from "react";
+import AsyncStorage from '@react-native-community/async-storage';
+import {
+  KeyboardAvoidingView,
+  Platform,
+  Text,
+  StyleSheet,
+  Image,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 
 import api from '../services/api';
 
-import logo from '../assets/logo.png';
+import logo from "../assets/logo.png";
 
 export default function Login({ navigation }) {
   const [user, setUser] = useState('');
@@ -12,9 +20,9 @@ export default function Login({ navigation }) {
   useEffect(() => {
     AsyncStorage.getItem('user').then(user => {
       if (user) {
-        navigation.navigate('Main', { user })
+        navigation.navigate('Main', { user });
       }
-    })
+    });
   }, []);
 
   async function handleLogin() {
@@ -28,14 +36,14 @@ export default function Login({ navigation }) {
   }
 
   return (
-    <KeyboardAvoidingView 
+    <KeyboardAvoidingView
       behavior="padding"
-      enabled={Platform.OS === 'ios'}
+      enabled={Platform.OS === "ios"}
       style={styles.container}
     >
       <Image source={logo} />
 
-      <TextInput 
+      <TextInput
         autoCapitalize="none"
         autoCorrect={false}
         placeholder="Digite seu usuário no Github"
@@ -58,7 +66,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5f5f5',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 30
+    padding: 30,
   },
 
   input: {
