@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Login.css';
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo_tindev.png';
 
 import api from '../services/api';
 
@@ -22,7 +22,7 @@ export default function Login({ history }) {
   return (
     <div className="login-container">
       <form onSubmit={handleSubmit}>
-        <img src={logo} alt="Tindev"/>
+        <img src={logo} className="logo" alt="Tindev"/>
         <input 
           placeholder="Digite seu usuário no Github" 
           value={username}

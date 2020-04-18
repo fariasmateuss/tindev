@@ -12,6 +12,11 @@
   flex-direction: column;
 }
 
+.login-container form .logo {
+  max-width: 80px;
+  align-self: center;
+}
+
 .login-container form input {
   margin-top: 20px;
   border: 1px solid #ddd;

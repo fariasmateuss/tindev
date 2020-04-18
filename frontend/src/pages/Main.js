@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './Main.css';
 import api from '../services/api';
 
-import logo from '../assets/logo.svg';
+import logo from '../assets/logo_tindev.png';
 import dislike from '../assets/dislike.svg';
 import like from '../assets/like.svg';
 import itsamatch from '../assets/itsamatch.png';
@@ -58,7 +58,7 @@ export default function Main({ match }) {
   return (
     <div className="main-container">
       <Link to="/">
-        <img src={logo} alt="Tindev" />
+        <img src={logo} className="logo" alt="Tindev" />
       </Link>
 
       { users.length > 0 ? (
@@ -83,7 +83,7 @@ export default function Main({ match }) {
           ))}
         </ul>
       ) : (
-        <div className="empty">Acabou :(</div>
+        <div className="empty">Aguarde mais usuários se cadastrarem!</div>
       ) }
      
       { matchDev && (

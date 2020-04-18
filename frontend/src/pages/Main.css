@@ -5,6 +5,11 @@
   text-align: center;
 }
 
+.main-container .logo {
+  max-width: 80px;
+  align-self: center;
+}
+
 .main-container ul {
   list-style: none;
   display: grid;
@@ -52,22 +57,24 @@
 
 .main-container ul li .buttons {
   margin-top: 10px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 10px;
 }
 
 .main-container ul li .buttons button {
-  height: 50px;
+  height: 70px;
+  width: 70px;
+  margin: 5px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.05);
   border: 0;
-  border-radius: 4px;
+  border-radius: 50px;
   background: var(--card-color);
   cursor: pointer;
 }
 
+.main-container ul li .buttons button img {
+  width: 25px;
+}
+
 .main-container ul li .buttons button:hover img {
-  transform: translateY(-5px);
   transition: all 0.2s;
 }
 
