@@ -17,7 +17,7 @@ io.on('connection', socket => {
 });
 
 mongoose.connect(
-  "mongodb+srv://Mateus:Mateus@cluster0-4roep.mongodb.net/tindev?retryWrites=true&w=majority", 
+  "mongodb+srv://Mateus:Mateus@cluster0-4roep.mongodb.net/test?retryWrites=true&w=majority", 
   {
   useNewUrlParser: true
   }

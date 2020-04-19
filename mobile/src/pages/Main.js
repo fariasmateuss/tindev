@@ -2,13 +2,12 @@ import React, { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import AsyncStorage from '@react-native-community/async-storage';
 import { 
-  View, 
+  View,
   Text, 
   SafeAreaView, 
   Image, 
   StyleSheet, 
-  TouchableOpacity,
-  PixelRatio
+  TouchableOpacity 
 } from 'react-native';
 
 import api from '../services/api';
@@ -28,8 +27,8 @@ export default function Main({ navigation }) {
       const response = await api.get('/devs', {
         headers: {
           user: id,
-        },
-      });
+        }
+      })
 
       setUsers(response.data);
     }
@@ -39,12 +38,12 @@ export default function Main({ navigation }) {
 
   useEffect(() => {
     const socket = io('http://localhost:3333', {
-      query: { user: id },
+      query: { user: id }
     });
 
     socket.on('match', dev => {
       setMatchDev(dev);
-    });
+    })
   }, [id]);
 
   async function handleLike() {
@@ -52,7 +51,7 @@ export default function Main({ navigation }) {
 
     await api.post(`/devs/${user._id}/likes`, null, {
       headers: { user: id },
-    });
+    })
 
     setUsers(rest);
   }
@@ -62,7 +61,7 @@ export default function Main({ navigation }) {
 
     await api.post(`/devs/${user._id}/dislikes`, null, {
       headers: { user: id },
-    });
+    })
 
     setUsers(rest);
   }
@@ -73,17 +72,10 @@ export default function Main({ navigation }) {
     navigation.navigate('Login');
   }
 
-
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity onPress={handleLogout}>
-        <Image 
-        style={styles.logo} 
-        source={logo}
-        style={{
-          width: PixelRatio.getPixelSizeForLayoutSize(20),
-          height: PixelRatio.getPixelSizeForLayoutSize(20)
-        }} />
+        <Image style={styles.logo} source={logo} />
       </TouchableOpacity>
 
       <View style={styles.cardsContainer}>
@@ -99,11 +91,11 @@ export default function Main({ navigation }) {
                 </View>
               </View>
             ))
-        )}
+          )}
       </View>
 
       { users.length > 0 && (
-        <View style={styles.buttonContainer}>
+        <View style={styles.buttonsContainer}>
           <TouchableOpacity style={styles.button} onPress={handleDislike}>
             <Image source={dislike} />
           </TouchableOpacity>
@@ -115,8 +107,8 @@ export default function Main({ navigation }) {
 
       { matchDev && (
         <View style={styles.matchContainer}>
-          <Image source={itsamatch} />
-          <Image style ={styles.matchAvatar} source={{ uri: matchDev.avatar}} />
+          <Image style={styles.matchImage} source={itsamatch} />
+          <Image style={styles.matchAvatar} source={{ uri: matchDev.avatar }} />
 
           <Text style={styles.matchName}>{matchDev.name}</Text>
           <Text style={styles.matchBio}>{matchDev.bio}</Text>
@@ -125,7 +117,7 @@ export default function Main({ navigation }) {
             <Text style={styles.closeMatch}>FECHAR</Text>
           </TouchableOpacity>
         </View>
-      )}
+      ) }
     </SafeAreaView>
   );
 }
@@ -139,7 +131,9 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    marginTop:30
+    marginTop: 30,
+    width: 50,
+    height: 50,
   },
 
   empty: {
@@ -153,7 +147,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignSelf: 'stretch',
     justifyContent: 'center',
-    maxHeight: 500
+    maxHeight: 500,
   },
 
   card: {
@@ -166,18 +160,18 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    bottom: 0
+    bottom: 0,
   },
 
   avatar: {
     flex: 1,
-    height: 300
+    height: 300,
   },
 
   footer: {
     backgroundColor: '#FFF',
     paddingHorizontal: 20,
-    paddingVertical: 15
+    paddingVertical: 15,
   },
 
   name: {
@@ -193,9 +187,9 @@ const styles = StyleSheet.create({
     lineHeight: 18
   },
 
-  buttonContainer: {
+  buttonsContainer: {
     flexDirection: 'row',
-    marginBottom: 30
+    marginBottom: 30,
   },
 
   button: {
@@ -212,12 +206,12 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     shadowOffset: {
       width: 0,
-      height: 2
+      height: 2,
     },
   },
 
   matchContainer: {
-    ...StyleSheet.absoluteFillObjects,
+    ...StyleSheet.absoluteFillObject,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
     justifyContent: 'center',
     alignItems: 'center'
@@ -234,7 +228,7 @@ const styles = StyleSheet.create({
     borderRadius: 80,
     borderWidth: 5,
     borderColor: '#FFF',
-    marginVertical: 30
+    marginVertical: 30,
   },
 
   matchName: {
@@ -253,10 +247,10 @@ const styles = StyleSheet.create({
   },
 
   closeMatch: {
-    fontSize: 26,
+    fontSize: 16,
     color: 'rgba(255, 255, 255, 0.8)',
     textAlign: 'center',
-    marginTop: 'center',
+    marginTop: 30,
     fontWeight: 'bold'
   },
 });

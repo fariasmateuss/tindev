@@ -46,10 +46,8 @@ export default function Login({ navigation }) {
     >
       <Image 
       source={logo}
-      style={{
-        width: PixelRatio.getPixelSizeForLayoutSize(20),
-        height: PixelRatio.getPixelSizeForLayoutSize(20)
-      }} />
+      style={styles.logo}
+      />
 
       <TextInput
         autoCapitalize="none"
@@ -83,6 +81,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     padding: 30
+  },
+
+  logo: {
+    width: 50,
+    height: 50
   },
 
   input: {
