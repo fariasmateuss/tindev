@@ -1,11 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import AsyncStorage from '@react-native-community/async-storage';
-import { View, Text, SafeAreaView, Image, StyleSheet, TouchableOpacity } from 'react-native';
+import { 
+  View, 
+  Text, 
+  SafeAreaView, 
+  Image, 
+  StyleSheet, 
+  TouchableOpacity,
+  PixelRatio
+} from 'react-native';
 
 import api from '../services/api';
 
-import logo from '../assets/logo.png';
+import logo from '../assets/icon_logo.png';
 import like from '../assets/like.png';
 import dislike from '../assets/dislike.png';
 import itsamatch from '../assets/itsamatch.png';
@@ -69,12 +77,18 @@ export default function Main({ navigation }) {
   return (
     <SafeAreaView style={styles.container}>
       <TouchableOpacity onPress={handleLogout}>
-        <Image style={styles.logo} source={logo}  />
+        <Image 
+        style={styles.logo} 
+        source={logo}
+        style={{
+          width: PixelRatio.getPixelSizeForLayoutSize(20),
+          height: PixelRatio.getPixelSizeForLayoutSize(20)
+        }} />
       </TouchableOpacity>
 
       <View style={styles.cardsContainer}>
         { users.length === 0
-          ? <Text style={styles.empty}>Acabou :(</Text>
+          ? <Text style={styles.empty}>Acabou!</Text>
           : (
             users.map((user, index) => (
               <View key={user._id} style={[styles.card, { zIndex: users.length - index }]}>
@@ -121,25 +135,25 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f5f5f5',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
   },
 
   logo: {
-    marginTop:30,
+    marginTop:30
   },
 
   empty: {
     alignSelf: 'center',
     color: '#999',
     fontSize: 24,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
 
   cardsContainer: {
     flex: 1,
     alignSelf: 'stretch',
     justifyContent: 'center',
-    maxHeight: 500,
+    maxHeight: 500
   },
 
   card: {
@@ -152,36 +166,36 @@ const styles = StyleSheet.create({
     top: 0,
     left: 0,
     right: 0,
-    bottom: 0,
+    bottom: 0
   },
 
   avatar: {
     flex: 1,
-    height: 300,
+    height: 300
   },
 
   footer: {
     backgroundColor: '#FFF',
     paddingHorizontal: 20,
-    paddingVertical: 15,
+    paddingVertical: 15
   },
 
   name: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#333',
+    color: '#333'
   },
 
   bio: {
     fontSize: 14,
     color: '#999',
     marginTop: 5,
-    lineHeight: 18,
+    lineHeight: 18
   },
 
   buttonContainer: {
     flexDirection: 'row',
-    marginBottom: 30,
+    marginBottom: 30
   },
 
   button: {
@@ -198,7 +212,7 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 2
     },
   },
 
@@ -206,12 +220,12 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObjects,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
 
   matchImage: {
     height: 60,
-    resizeMode: 'contain',
+    resizeMode: 'contain'
   },
 
   matchAvatar: {
@@ -220,13 +234,13 @@ const styles = StyleSheet.create({
     borderRadius: 80,
     borderWidth: 5,
     borderColor: '#FFF',
-    marginVertical: 30,
+    marginVertical: 30
   },
 
   matchName: {
     fontSize: 26,
     fontWeight: 'bold',
-    color: '#FFF',
+    color: '#FFF'
   },
 
   matchBio: {
@@ -235,7 +249,7 @@ const styles = StyleSheet.create({
     color: 'rgba(255, 255, 255, 0.8)',
     lineHeight: 24,
     textAlign: 'center',
-    paddingHorizontal: 30,
+    paddingHorizontal: 30
   },
 
   closeMatch: {
@@ -243,6 +257,6 @@ const styles = StyleSheet.create({
     color: 'rgba(255, 255, 255, 0.8)',
     textAlign: 'center',
     marginTop: 'center',
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
 });

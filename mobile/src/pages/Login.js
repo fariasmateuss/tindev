@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import AsyncStorage from '@react-native-community/async-storage';
+import LinearGradient from 'react-native-linear-gradient';
+
 import {
   KeyboardAvoidingView,
   Platform,
@@ -8,11 +10,12 @@ import {
   Image,
   TextInput,
   TouchableOpacity,
+  PixelRatio
 } from "react-native";
 
 import api from '../services/api';
 
-import logo from "../assets/logo.png";
+import logo from '../assets/icon_logo.png';
 
 export default function Login({ navigation }) {
   const [user, setUser] = useState('');
@@ -41,7 +44,12 @@ export default function Login({ navigation }) {
       enabled={Platform.OS === "ios"}
       style={styles.container}
     >
-      <Image source={logo} />
+      <Image 
+      source={logo}
+      style={{
+        width: PixelRatio.getPixelSizeForLayoutSize(20),
+        height: PixelRatio.getPixelSizeForLayoutSize(20)
+      }} />
 
       <TextInput
         autoCapitalize="none"
@@ -54,7 +62,15 @@ export default function Login({ navigation }) {
       />
 
       <TouchableOpacity onPress={handleLogin} style={styles.button}>
-        <Text style={styles.buttonText}>Enviar</Text>
+        <LinearGradient
+          start={{x: 0.0, y: 0.25}} 
+          end={{x: 0.5, y: 1.0}}
+          locations={[0,0.5,0.6]}
+          colors={['#FD297B', '#FF5864', '#FF655B']} 
+          style={styles.button}
+        >
+          <Text style={styles.buttonText}>Enviar</Text>
+        </LinearGradient> 
       </TouchableOpacity>
     </KeyboardAvoidingView>
   );
@@ -66,7 +82,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#f5f5f5',
     justifyContent: 'center',
     alignItems: 'center',
-    padding: 30,
+    padding: 30
   },
 
   input: {
@@ -77,22 +93,21 @@ const styles = StyleSheet.create({
     borderColor: '#ddd',
     borderRadius: 4,
     marginTop: 20,
-    paddingHorizontal: 15,
+    paddingHorizontal: 15
   },
 
   button: {
     height: 46,
     alignSelf: 'stretch',
-    backgroundColor: '#DF4723',
     borderRadius: 4,
     marginTop: 10,
     justifyContent: 'center',
-    alignItems: 'center',
+    alignItems: 'center'
   },
 
   buttonText: {
     color: '#FFF',
     fontWeight: 'bold',
-    fontSize: 16,
+    fontSize: 16
   },
 });
