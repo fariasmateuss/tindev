@@ -21,7 +21,7 @@
   App Tinder clone! Consuming the GitHub API.
 </p>
 
-<img scr="./.github/Tindev.gif" />
+<img src="./.github/Tindev.gif" />
 
 </p>
 
@@ -32,7 +32,6 @@
 - React Native
 - Socket.io
 - MongoDB
-  
 - Dark Mode(Theme)
 
 ### Back-End
