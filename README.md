@@ -1,5 +1,6 @@
 <p align="center">
   <img src="./.github/icon_logo.png" />
+</p>
 
 <p align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/fariasmateuss/tindev">
@@ -21,9 +22,6 @@
   App Tinder clone! Consuming the GitHub API.
 </p>
 
-<img src="./.github/Tindev.gif" />
-
-</p>
 
 ## Tech
 
@@ -34,13 +32,18 @@
 - MongoDB
 - Dark Mode(Theme)
 
+### Preview App
+<img src="./.github/Tindev.gif" />
+
+> Real time applications with Socket.io.
+
+# How to use
+
 ### Back-End
-- Move yourself to the backend folder: `cd backend`
 - Run `yarn` in the `backend` folder;
 - Run `yarn dev` to start the server
 
 ### Front-End 
-- Move yourself to the frontend folder: `cd frontend`
 - Run `yarn` in the `frontend` folder;
 - Run `yarn start` to up the project;
 
@@ -49,7 +52,6 @@
 - Update the baseURL at src/services/api.js.
 - Run react-native run-ios (or run-android if your prefer) to start the mobile app.
   
-
 ## How to contribute
 - Fork this repository;
 - Create a branch with your feature: `git checkout -b my-feature`;
