@@ -24,20 +24,19 @@
 
 
 ## Tech
-
 - Node.js
 - React
 - React Native
 - Socket.io
 - MongoDB
-- Dark Mode(Theme)
 
-### Preview App
-<img src="./.github/Tindev.gif" />
+> Dark Mode Theme and real time applications with Socket.io.
 
-> Real time applications with Socket.io.
+### Preview
 
-# How to use
+[Watch the video](https://youtu.be/CMpfswpfDR0)
+
+## Development setup
 
 ### Back-End
 - Run `yarn` in the `backend` folder;
@@ -52,7 +51,7 @@
 - Update the baseURL at src/services/api.js.
 - Run react-native run-ios (or run-android if your prefer) to start the mobile app.
   
-## How to contribute
+### How to contribute
 - Fork this repository;
 - Create a branch with your feature: `git checkout -b my-feature`;
 - Commit your changes: `git commit -m 'feat: My feature'`;
