@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
 import { BrowserRouter, Route } from "react-router-dom";
+import GlobalStyle from './global/globalStyle'
 
-import Login from "./pages/Login/Login";
-import Main from "./pages/Main/Main";
+import { ThemeContext } from './contexts/themeContext';
+
+import Login from "./pages/Login";
+import Main from "./pages/Main";
 
 export default function Routes() {
+  const { theme } = useContext(ThemeContext);
+  
   return (
-    <BrowserRouter>
-      <Route path="/" exact component={Login} />
-      <Route path="/dev/:id" component={Main} />
-    </BrowserRouter>
+    <>
+      <GlobalStyle theme={theme.colors}/>
+      <BrowserRouter>
+        <Route path="/" exact component={Login} />
+        <Route path="/dev/:id" component={Main} />
+      </BrowserRouter>
+    </>
   );
 }

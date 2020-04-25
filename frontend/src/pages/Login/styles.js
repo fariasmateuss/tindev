@@ -1,23 +1,26 @@
-.login-container {
+import styled from 'styled-components';
+
+export const Container = styled.div`
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  background-color: #f3f3f3;
+`;
 
-.login-container form {
+export const Form = styled.form`
   width: 100%;
   max-width: 300px;
   display: flex;
   flex-direction: column;
-}
 
-.login-container form .logo {
-  max-width: 50px;
-  align-self: center;
-}
+  img {
+    max-width: 50px;
+    align-self: center;
+  }
+`;
 
-.login-container form input {
+export const Input = styled.input`
   margin-top: 20px;
   border: 1px solid #ddd;
   border-radius: 4px;
@@ -25,21 +28,21 @@
   padding: 0 20px;
   font-size: 16px;
   color: #666;
-}
 
-.login-container form input ::placeholder {
-  color: #999;
-}
+  ::placeholder {
+    color: #999;
+  }
+`;
 
-.login-container form button {
+export const Button = styled.button`
   margin-top: 10px;
   border: 0;
   border-radius: 4px;
   height: 48px;
   font-size: 16px;
   background: 
-    linear-gradient(0.25turn, #FD297B, #FF5864, #FF655B);
+  linear-gradient(0.25turn, #FD297B, #FF5864, #FF655B);
   font-weight: bold;
   color: #FFF;
   cursor: pointer;
-}
+`;

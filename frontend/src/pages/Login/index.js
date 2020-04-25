@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import './Login.css';
-import logo from '../../assets/icon_logo.png';
-
 import api from '../../services/api';
+
+import { Container, Form, Input, Button } from './styles'
+import logo from '../../assets/icon_logo.png';
 
 export default function Login({ history }) {
   const [username, setUsername] = useState('');
@@ -20,17 +20,16 @@ export default function Login({ history }) {
   }
 
   return (
-    <div className="login-container">
-      <form onSubmit={handleSubmit}>
-        <img src={logo} className="logo" alt="Tindev"/>
-        <input 
-          placeholder="Digite seu usuário no Github" 
+    <Container>
+      <Form onSubmit={handleSubmit}>
+        <img src={logo} alt="Tindev"/>
+        <Input
+          placeholder="Digite seu usuário do Github" 
           value={username}
           onChange={e => setUsername(e.target.value)}
         />
-        <button type="submit">Enviar</button>
-      </form>
-    </div>
+        <Button type="submit">Enviar</Button>
+      </Form>
+    </Container>
   );
 }
-
