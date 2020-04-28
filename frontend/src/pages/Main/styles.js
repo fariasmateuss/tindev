@@ -5,12 +5,28 @@ export const Container = styled.div`
   display: flex;
   flex-direction: column;
 
-  ul {
+  #card-users {
     list-style: none;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
     margin-top: 80px;
+  }
+
+  @media screen and (max-width: 768px) {
+    #card-users {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-gap: 20px;
+    }
+  }
+
+  @media screen and (max-width: 480px) {
+    #card-users {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 20px;
+    }
   }
 `;
 
@@ -27,5 +43,13 @@ export const Alert = styled.h1`
   margin: auto;
   color: #999;
   font-weight: bold;
-  margin-top: 300px;
+  margin-top: 40vh;
+
+  @media screen and (max-width: 768px) {
+    font-size: 27px;
+  }
+
+  @media screen and (max-width: 480px) {
+    font-size: 22px;
+  }
 `;

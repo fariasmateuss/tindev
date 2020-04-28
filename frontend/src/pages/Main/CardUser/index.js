@@ -7,23 +7,17 @@ import Like from '../../../assets/like.svg';
 export default function CardUser({ user, styles, like, dislike }) {
   return (
     <Container>
-      <img src={user.avatar} alt={user.name}/>
-      <Footer color={styles.colors} >
+      <img src={user.avatar} alt={user.name} />
+      <Footer color={styles.colors}>
         <strong>{user.name}</strong>
         <p>{user.bio}</p>
       </Footer>
       <Actions>
-        <Button 
-          color={styles.colors} 
-          onClick={() => dislike(user._id)}
-        >
-          <img src={Dislike} alt="dislike"/>
+        <Button color={styles.colors} onClick={() => dislike(user._id)}>
+          <img src={Dislike} alt="dislike" />
         </Button>
-        <Button 
-          color={styles.colors} 
-          onClick={() => like(user._id)}
-        >
-          <img src={Like} alt="like"/>
+        <Button color={styles.colors} onClick={() => like(user._id)}>
+          <img src={Like} alt="like" />
         </Button>
       </Actions>
     </Container>

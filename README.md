@@ -22,8 +22,8 @@
   App Tinder clone! Consuming the GitHub API.
 </p>
 
-
 ## Tech
+
 - Node.js
 - React
 - React Native
@@ -34,24 +34,30 @@
 
 ### Preview
 
-[Watch the video](https://youtu.be/CMpfswpfDR0)
+[Watch the video](https://youtu.be/5EbNTJ2fq70)
+
+**Note**: the mobile part of this application does not have the notifications feature because I do not have the resources to emulate Android / IOS on my machine.
 
 ## Development setup
 
 ### Back-End
+
 - Run `yarn` in the `backend` folder;
 - Run `yarn dev` to start the server
 
-### Front-End 
+### Front-End
+
 - Run `yarn` in the `frontend` folder;
 - Run `yarn start` to up the project;
 
-### Mobile 
+### Mobile
+
 - Run `yarn` in the `mobile` folder;
 - Update the baseURL at src/services/api.js.
 - Run react-native run-ios (or run-android if your prefer) to start the mobile app.
-  
+
 ### How to contribute
+
 - Fork this repository;
 - Create a branch with your feature: `git checkout -b my-feature`;
 - Commit your changes: `git commit -m 'feat: My feature'`;
@@ -60,4 +66,5 @@
 After the merge of your pull request is done, you can delete your branch.
 
 # License
+
 [MIT License](/LICENSE)

@@ -1,13 +1,13 @@
-import React from "react"; 
-import Routes from "./routes";
+import React from 'react';
+import Routes from './routes';
 
-import ThemeProvider from './contexts/themeContext'
+import ThemeProvider from './contexts/themeContext';
 
 function App() {
   return (
-   <ThemeProvider>
+    <ThemeProvider>
       <Routes />
-   </ThemeProvider>
+    </ThemeProvider>
   );
 }
 
