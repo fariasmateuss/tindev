@@ -50,14 +50,10 @@
 - Run `yarn` in the `mobile` folder;
 - Update the baseURL at src/services/api.js.
 - Run react-native run-ios (or run-android if your prefer) to start the mobile app.
-  
-### How to contribute
-- Fork this repository;
-- Create a branch with your feature: `git checkout -b my-feature`;
-- Commit your changes: `git commit -m 'feat: My feature'`;
-- Push to your branch: `git push origin my-feature`;
 
-After the merge of your pull request is done, you can delete your branch.
+## Contribution
+
+See the [contribution guide](CONTRIBUTING.md) for more details on how to contribute to this project.
 
 # License
 [MIT License](/LICENSE)
