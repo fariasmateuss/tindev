@@ -1,11 +1,10 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import './App.css';
 // import drac from './assets/dracula.svg';
 
-import Routes from "./routes";
+import Routes from './routes';
 
 function App() {
-  
   function themeChange(e) {
     if (e.target.checked) {
       document.documentElement.setAttribute('data-theme', 'dracula');
@@ -18,12 +17,8 @@ function App() {
     <div className="app">
       <div className="theme-switch-wrapper">
         <label className="theme-switch">
-          <input 
-          type="checkbox"
-          id="checkbox"
-          onChange={themeChange} 
-          />
-          <div className="slider round"></div>
+          <input type="checkbox" id="checkbox" onChange={themeChange} />
+          <div className="slider round" />
         </label>
       </div>
       <Routes />

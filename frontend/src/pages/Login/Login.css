@@ -37,9 +37,8 @@
   border-radius: 4px;
   height: 48px;
   font-size: 16px;
-  background: 
-    linear-gradient(0.25turn, #FD297B, #FF5864, #FF655B);
+  background: linear-gradient(0.25turn, #fd297b, #ff5864, #ff655b);
   font-weight: bold;
-  color: #FFF;
+  color: #fff;
   cursor: pointer;
 }

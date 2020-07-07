@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import io from 'socket.io-client';
 import AsyncStorage from '@react-native-community/async-storage';
-import { 
+import {
   View,
-  Text, 
-  SafeAreaView, 
-  Image, 
-  StyleSheet, 
-  TouchableOpacity 
+  Text,
+  SafeAreaView,
+  Image,
+  StyleSheet,
+  TouchableOpacity,
 } from 'react-native';
 
 import api from '../services/api';
@@ -27,8 +27,8 @@ export default function Main({ navigation }) {
       const response = await api.get('/devs', {
         headers: {
           user: id,
-        }
-      })
+        },
+      });
 
       setUsers(response.data);
     }
@@ -38,12 +38,12 @@ export default function Main({ navigation }) {
 
   useEffect(() => {
     const socket = io('http://localhost:3333', {
-      query: { user: id }
+      query: { user: id },
     });
 
     socket.on('match', dev => {
       setMatchDev(dev);
-    })
+    });
   }, [id]);
 
   async function handleLike() {
@@ -51,7 +51,7 @@ export default function Main({ navigation }) {
 
     await api.post(`/devs/${user._id}/likes`, null, {
       headers: { user: id },
-    })
+    });
 
     setUsers(rest);
   }
@@ -61,7 +61,7 @@ export default function Main({ navigation }) {
 
     await api.post(`/devs/${user._id}/dislikes`, null, {
       headers: { user: id },
-    })
+    });
 
     setUsers(rest);
   }
@@ -79,22 +79,27 @@ export default function Main({ navigation }) {
       </TouchableOpacity>
 
       <View style={styles.cardsContainer}>
-        { users.length === 0
-          ? <Text style={styles.empty}>Acabou!</Text>
-          : (
-            users.map((user, index) => (
-              <View key={user._id} style={[styles.card, { zIndex: users.length - index }]}>
-                <Image style={styles.avatar} source={{ uri: user.avatar }} />
-                <View style={styles.footer}>
-                  <Text style={styles.name}>{user.name}</Text>
-                  <Text style={styles.bio} numberOfLines={3}>{user.bio}</Text>
-                </View>
+        {users.length === 0 ? (
+          <Text style={styles.empty}>Acabou!</Text>
+        ) : (
+          users.map((user, index) => (
+            <View
+              key={user._id}
+              style={[styles.card, { zIndex: users.length - index }]}
+            >
+              <Image style={styles.avatar} source={{ uri: user.avatar }} />
+              <View style={styles.footer}>
+                <Text style={styles.name}>{user.name}</Text>
+                <Text style={styles.bio} numberOfLines={3}>
+                  {user.bio}
+                </Text>
               </View>
-            ))
-          )}
+            </View>
+          ))
+        )}
       </View>
 
-      { users.length > 0 && (
+      {users.length > 0 && (
         <View style={styles.buttonsContainer}>
           <TouchableOpacity style={styles.button} onPress={handleDislike}>
             <Image source={dislike} />
@@ -103,9 +108,9 @@ export default function Main({ navigation }) {
             <Image source={like} />
           </TouchableOpacity>
         </View>
-      ) }
+      )}
 
-      { matchDev && (
+      {matchDev && (
         <View style={styles.matchContainer}>
           <Image style={styles.matchImage} source={itsamatch} />
           <Image style={styles.matchAvatar} source={{ uri: matchDev.avatar }} />
@@ -117,7 +122,7 @@ export default function Main({ navigation }) {
             <Text style={styles.closeMatch}>FECHAR</Text>
           </TouchableOpacity>
         </View>
-      ) }
+      )}
     </SafeAreaView>
   );
 }
@@ -127,7 +132,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#f5f5f5',
     alignItems: 'center',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
   },
 
   logo: {
@@ -140,7 +145,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     color: '#999',
     fontSize: 24,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
 
   cardsContainer: {
@@ -177,14 +182,14 @@ const styles = StyleSheet.create({
   name: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#333'
+    color: '#333',
   },
 
   bio: {
     fontSize: 14,
     color: '#999',
     marginTop: 5,
-    lineHeight: 18
+    lineHeight: 18,
   },
 
   buttonsContainer: {
@@ -214,12 +219,12 @@ const styles = StyleSheet.create({
     ...StyleSheet.absoluteFillObject,
     backgroundColor: 'rgba(0, 0, 0, 0.8)',
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
   },
 
   matchImage: {
     height: 60,
-    resizeMode: 'contain'
+    resizeMode: 'contain',
   },
 
   matchAvatar: {
@@ -234,7 +239,7 @@ const styles = StyleSheet.create({
   matchName: {
     fontSize: 26,
     fontWeight: 'bold',
-    color: '#FFF'
+    color: '#FFF',
   },
 
   matchBio: {
@@ -243,7 +248,7 @@ const styles = StyleSheet.create({
     color: 'rgba(255, 255, 255, 0.8)',
     lineHeight: 24,
     textAlign: 'center',
-    paddingHorizontal: 30
+    paddingHorizontal: 30,
   },
 
   closeMatch: {
@@ -251,6 +256,6 @@ const styles = StyleSheet.create({
     color: 'rgba(255, 255, 255, 0.8)',
     textAlign: 'center',
     marginTop: 30,
-    fontWeight: 'bold'
+    fontWeight: 'bold',
   },
 });

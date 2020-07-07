@@ -22,10 +22,16 @@
     "@babel/core": "^7.5.5",
     "@babel/runtime": "^7.5.5",
     "@react-native-community/eslint-config": "^0.0.5",
+    "babel-eslint": "^10.1.0",
     "babel-jest": "^24.8.0",
-    "eslint": "^6.1.0",
+    "eslint": "^7.4.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
     "jest": "^24.8.0",
     "metro-react-native-babel-preset": "^0.55.0",
+    "prettier": "^2.0.5",
     "react-test-renderer": "16.8.6"
   },
   "jest": {

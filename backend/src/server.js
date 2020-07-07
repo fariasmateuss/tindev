@@ -1,8 +1,6 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const cors = require("cors");
-
-const routes = require("./routes");
+const express = require('express');
+const mongoose = require('mongoose');
+const cors = require('cors');
 
 const app = express();
 const server = require('http').Server(app);
@@ -12,18 +10,20 @@ const connectedUsers = {};
 
 io.on('connection', socket => {
   const { user } = socket.handshake.query;
-  
+
   connectedUsers[user] = socket.id;
 });
 
+const routes = require('./routes');
+
 mongoose.connect(
-  "mongodb+srv://Mateus:Mateus@cluster0-4roep.mongodb.net/test?retryWrites=true&w=majority", 
+  'mongodb+srv://Mateus:Mateus@cluster0-4roep.mongodb.net/tindev?retryWrites=true&w=majority',
   {
-  useNewUrlParser: true
-  }
+    useNewUrlParser: true,
+  },
 );
 
-app.use((req, res, next) =>  {
+app.use((req, res, next) => {
   req.io = io;
   req.connectedUsers = connectedUsers;
 

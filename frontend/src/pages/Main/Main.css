@@ -102,13 +102,13 @@
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  border: 5px solid #FFF;
+  border: 5px solid #fff;
   margin: 30px 0;
 }
 
 .match-container strong {
   font-size: 32px;
-  color: #FFF;
+  color: #fff;
 }
 
 .match-container p {
@@ -123,7 +123,7 @@
   border: 0;
   background: none;
   font-weight: bold;
-  color: #FFF;
+  color: #fff;
   font-size: 18px;
   margin-top: 30px;
   cursor: pointer;

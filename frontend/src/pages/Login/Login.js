@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
+
 import './Login.css';
+
 import logo from '../../assets/icon_logo.png';
 
 import api from '../../services/api';
 
 export default function Login({ history }) {
   const [username, setUsername] = useState('');
-  
+
   async function handleSubmit(e) {
     e.preventDefault();
 
@@ -22,9 +24,9 @@ export default function Login({ history }) {
   return (
     <div className="login-container">
       <form onSubmit={handleSubmit}>
-        <img src={logo} className="logo" alt="Tindev"/>
-        <input 
-          placeholder="Digite seu usuário no Github" 
+        <img src={logo} className="logo" alt="Tindev" />
+        <input
+          placeholder="Digite seu usuário no Github"
           value={username}
           onChange={e => setUsername(e.target.value)}
         />
@@ -33,4 +35,3 @@ export default function Login({ history }) {
     </div>
   );
 }
-

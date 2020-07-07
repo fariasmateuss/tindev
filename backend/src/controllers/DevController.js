@@ -13,13 +13,13 @@ module.exports = {
         { _id: { $nin: loggedDev.likes } },
         { _id: { $nin: loggedDev.dislikes } },
       ],
-    })
+    });
 
     return res.json(users);
   },
-  
+
   async store(req, res) {
-    const { username } = req.body; 
+    const { username } = req.body;
 
     const userExists = await Dev.findOne({ user: username });
 
@@ -27,17 +27,19 @@ module.exports = {
       return res.json(userExists);
     }
 
-    const response = await axios.get(`https://api.github.com/users/${username}`);
+    const response = await axios.get(
+      `https://api.github.com/users/${username}`,
+    );
 
-    const { name, bio, avatar_url: avatar } = response.data
-    
+    const { name, bio, avatar_url: avatar } = response.data;
+
     const dev = await Dev.create({
       name,
       user: username,
       bio,
-      avatar
-    })
+      avatar,
+    });
 
     return res.json(dev);
-  }
+  },
 };
