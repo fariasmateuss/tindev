@@ -6,14 +6,6 @@
   --third-color: #ccc;
 }
 
-[data-theme='dracula'] {
-  --bg-color: #000000;
-  --card-color: #44454b;
-  --primary-color: #ff5864;
-  --secondary-color: #fff;
-  --third-color: #fd297b;
-}
-
 * {
   margin: 0;
   padding: 0;
@@ -37,30 +29,6 @@ body,
 input,
 button {
   font-family: Arial, Helvetica, sans-serif;
-}
-
-.theme-switch-wrapper {
-  position: fixed;
-  right: 10px;
-  top: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.theme-switch-wrapper img {
-  height: 32px;
-  margin-right: 10px;
-}
-
-.theme-switch {
-  display: inline-block;
-  height: 34px;
-  position: relative;
-  width: 60px;
-}
-
-.theme-switch input {
-  display: none;
 }
 
 .slider {
