@@ -3,19 +3,7 @@
 </p>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/fariasmateuss/tindev?color=FE3C72?&style=for-the-badge">
-
-  <img alt="Repository size" src="https://img.shields.io/github/forks/fariasmateuss/tindev?color=FE3C72&style=for-the-badge">
-
-  <a href="https://github.com/fariasmateuss/tindev/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/fariasmateuss/tindev?color=FE3C72?&style=for-the-badge">
-  </a>
-
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen?color=FE3C72?&style=for-the-badge">
-</p>
-
-<p align="center">
-  App Tinder clone!
+  App Tinder clone built with ReactJs, React Native, NodeJs and MongoDB.
 </p> 
 
 <img src=".github/thumbnail.png" align="center" />
@@ -27,7 +15,7 @@
 - [React Native](https://reactnative.dev) - Native Development
 - [MongoDB](https://www.mongodb.com/) - NoSQL Cluster
 
-### Preview
+## Preview
 
 [Watch the video](https://youtu.be/CMpfswpfDR0)
 
@@ -79,7 +67,7 @@ Run `yarn` in the `mobile` folder;
   yarn 
 ```
 
-*Update the baseURL at src/services/api.js*;
+Update the baseURL at src/services/api.js;
 
 To start the mobile app.
 
