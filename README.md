@@ -11,9 +11,20 @@
 ## Tech
 
 - [NodeJs](https://nodejs.org/en/) - Build the server.
-- [ReactJs](https://reactjs.org) - A JavaScript library for building user interfaces.
-- [React Native](https://reactnative.dev) - Native Development
-- [MongoDB](https://www.mongodb.com/) - NoSQL Cluster
+- [ReactJs](https://reactjs.org) - A JavaScript library for building user interfaces
+  - [React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom) - DOM bindings
+- [React Native](https://reactnative.dev) - Native Development.
+  - [React Navigation](https://reactnavigation.org/docs/getting-started/) - Routing and navigation for your React Native apps.
+  - [React Native Linear Gradient](https://github.com/react-native-community/react-native-linear-gradient) - A Linear Gradient component for react-native
+- [MongoDB](https://www.mongodb.com/) - NoSQL Cluster.
+- [Express](https://expressjs.com/) - Router of the Application.
+- [Mongoose](https://mongoosejs.com/docs/) - Mongoose is a MongoDB object modeling tool designed to work in an asynchronous environment.
+- [socket.io](socket.io) - Socket.IO is a library that enables real-time.
+- [CORS](https://www.npmjs.com/package/cors) - Cross-origin Resource Sharing.
+- [Axios](https://github.com/axios/axios) - Promise based HTTP client for the browser and NodeJs.
+- [Nodemon](https://nodemon.io/) - Process Manager used in the development.
+- [Prettier](https://prettier.io/docs/en/cli.html) - An opinionated code formatter.
+- [ESlint](https://eslint.org) - ESLint statically analyzes your code to quickly find problems.
 
 ## Preview
 
@@ -53,7 +64,7 @@ In the frontend folder;
   yarn 
 ```
 
-To up the project;
+To start the project;
 
 ``` 
   yarn start
@@ -61,7 +72,7 @@ To up the project;
 
 #### Mobile 
 
-Run `yarn` in the `mobile` folder;
+In the mobile folder;
 
 ```
   yarn 
@@ -69,7 +80,7 @@ Run `yarn` in the `mobile` folder;
 
 Update the baseURL at src/services/api.js;
 
-To start the mobile app.
+To start the mobile app;
 
 ```
   react-native run-ios
