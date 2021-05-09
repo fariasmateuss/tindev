@@ -16,12 +16,17 @@ io.on('connection', socket => {
 
 const routes = require('./routes');
 
-mongoose.connect(
-  'mongodb+srv://Mateus:Mateus@cluster0-4roep.mongodb.net/tindev?retryWrites=true&w=majority',
-  {
-    useNewUrlParser: true,
-  },
-);
+mongoose
+  .connect(
+    'mongodb+srv://Mateus:Mateus@cluster0-4roep.mongodb.net/tindev?retryWrites=true&w=majority',
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    },
+  )
+  .catch(err => {
+    console.log(err.message);
+  });
 
 app.use((req, res, next) => {
   req.io = io;
