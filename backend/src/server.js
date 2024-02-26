@@ -1,3 +1,5 @@
+require('dotenv').config();
+
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
@@ -7,8 +9,6 @@ const server = require('http').Server(app);
 const io = require('socket.io')(server);
 
 const connectedUsers = {};
-
-console.log(process.env.MONGO_URI);
 
 io.on('connection', socket => {
   const { user } = socket.handshake.query;
@@ -22,7 +22,7 @@ mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
 });
 
-app.use((req, res, next) => {
+app.use((req, _res, next) => {
   req.io = io;
   req.connectedUsers = connectedUsers;
 
