@@ -8,6 +8,8 @@ const io = require('socket.io')(server);
 
 const connectedUsers = {};
 
+console.log(process.env.MONGO_URI);
+
 io.on('connection', socket => {
   const { user } = socket.handshake.query;
 
@@ -16,12 +18,9 @@ io.on('connection', socket => {
 
 const routes = require('./routes');
 
-mongoose.connect(
-  'mongodb+srv://Mateus:Mateus@cluster0-4roep.mongodb.net/tindev?retryWrites=true&w=majority',
-  {
-    useNewUrlParser: true,
-  },
-);
+mongoose.connect(process.env.MONGO_URI, {
+  useNewUrlParser: true,
+});
 
 app.use((req, res, next) => {
   req.io = io;
