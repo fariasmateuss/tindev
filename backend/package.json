@@ -1,7 +1,7 @@
 {
-  "name": "backend",
+  "name": "server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/index.js",
   "license": "MIT",
   "scripts": {
     "dev": "nodemon src/server.js"
